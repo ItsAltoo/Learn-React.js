@@ -1,0 +1,13 @@
+.introBg {
+  background: url(./assets/Images/Background/BlueWave.jpg);
+  background-size:cover;
+  background-position: center;
+  height: 100vh;
+  max-width: 100%;
+}
+
+.gallery {
+  background-color: #011d70;
+  height: 100vh;
+  max-width: 100%;
+}
