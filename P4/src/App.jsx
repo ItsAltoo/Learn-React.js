@@ -1,32 +1,18 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import "./global.css"
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <h1 className="text-3xl font-bold underline text-amber-500 mb-3">
-          Hello world!
-        </h1>
-        
-        <button
-          className="btn btn-outline btn-info"
-          onClick={() => setCount(count + 1)}>
-          count : {count}
-        </button>
-
-        <button className="btn btn-primary">Primary</button>
-      </div>
-      <div className="flex flex-col items-center justify-center h-screen bg-base-200">
-      <h1 className="text-3xl font-bold">Hello, DaisyUI!</h1>
-      <button className="btn btn-primary mt-4">Klik Aku!</button>
-      <button className="btn btn-secondary mt-2">Tombol Kedua</button>
-      <button className="btn btn-accent mt-2">Tombol Ketiga</button>
-    </div>
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 
